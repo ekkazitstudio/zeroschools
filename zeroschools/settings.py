@@ -14,9 +14,13 @@ INSTALLED_APPS = (
 	'django.contrib.sessions',
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
+	'tinymce',
+	'sorl.thumbnail',
+	'mce_filebrowser',
 	'taggit',
 	'crispy_forms',
 	'blog',
+	'course',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -73,3 +77,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+TINYMCE_DEFAULT_CONFIG = {
+	'file_browser_callback': 'mce_filebrowser',
+	'plugins': 'paste,style',
+	'width': '90%',
+	'height': '600px',
+	'paste_text_sticky': 'true',
+	'paste_text_sticky_default': 'true',
+	'content_css' : '/static/css/tinymce.css',
+}
